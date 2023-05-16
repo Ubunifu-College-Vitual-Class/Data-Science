@@ -1,0 +1,11 @@
+Risk,History,Debt,Collateral,Income
+high,bad,high,none,$0-15K
+high,unknown,high,none,$15-35K
+low,unknown,low,none,$15-35K
+high,unknown,low,none,$0-15K
+low,unknown,low,none,Over $35K
+low,unknown,low,adequate,Over $35K
+high,bad,low,none,$0-15K
+high,bad,low,adequate,Over $35K
+low,good,low,none,Over $35K
+low,good,high,none,Over $35K
