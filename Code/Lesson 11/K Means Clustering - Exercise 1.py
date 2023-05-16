@@ -30,8 +30,7 @@ x_train = scaler.fit_transform(x)
 
 #5 clusters i.e k=5
 kmeans = KMeans(n_clusters=5, init='k-means++', random_state= 42)
-kmeans.fit(x_train)  
-
+df['cluster'] = kmeans.fit_predict(x_train)  #return the labels
 
 
 
@@ -55,31 +54,33 @@ cluster_label = kmeans.predict(new_data_scaled)[0]
 
 # classify the phone based on the cluster label
 if cluster_label == 0:
-    print ("Bob's phone is on the Cheap cluster")
+    print (f"Bob's phone is on the Cheap cluster {cluster_label}")
 elif cluster_label == 1:
-    print ("Bob's phone is on the Average cluster")
+    print (f"Bob's phone is on the Average cluster {cluster_label}")
 elif cluster_label == 2:
-    print ("Bob's phone is on the Expensive cluster")
+    print (f"Bob's phone is on the Expensive cluster {cluster_label}")
 else:
-    print ("Bob's phone is on the Premium phone cluster")
+    print (f"Bob's phone is on the Premium phone cluster {cluster_label}")
     
 #Plotting Label 0 K-Means Clusters  
+# print(label)
 
+# filtered_label0 = df[label == 0]
+label = df['cluster']
 
+label_0 = df[label == 0]
+label_1 = df[label == 1]
+label_2 = df[label == 2]
+label_3 = df[label == 3]
+label_4 = df[label == 4]
 
-#filter rows of original data
-
- 
-#Getting the Centroids
-centroids = kmeans.cluster_centers_
-u_labels = np.unique(cluster_label)
- 
-#plotting the results:
-
-plt.legend()
+cols = df.columns
+plt.scatter(label_0[cols[0]], label_0[cols[1]], color = 'red')
+plt.scatter(label_1[cols[0]], label_1[cols[1]], color = 'black')
+plt.scatter(label_2[cols[0]], label_2[cols[1]], color = 'green')
+plt.scatter(label_3[cols[0]], label_3[cols[1]], color = 'blue')
+plt.scatter(label_4[cols[0]], label_4[cols[1]], color = 'yellow')
 plt.show()
-
-
 
 
 
