@@ -1,13 +1,12 @@
 
 
 import numpy as np
-import matplotlib.pyplot as plt
 import pandas as pd
 # Minisom library and module is used for performing Self Organizing Maps
 from minisom import MiniSom #pip install MiniSom
 import os
 from sklearn.preprocessing import MinMaxScaler
-from pylab import plot, axis, show, pcolor, colorbar, bone
+from pylab import plot, show, pcolor, colorbar, bone
 
 
 # importing the dataset  

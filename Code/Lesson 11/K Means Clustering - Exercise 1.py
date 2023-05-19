@@ -29,9 +29,8 @@ x_train = scaler.fit_transform(x)
 
 
 #5 clusters i.e k=5
-kmeans = KMeans(n_clusters=5, init='k-means++', random_state= 42)
+kmeans = KMeans(n_clusters=6, init='k-means++', random_state= 42)
 df['cluster'] = kmeans.fit_predict(x_train)  #return the labels
-
 
 
 #bob has the below parameters of his new phone

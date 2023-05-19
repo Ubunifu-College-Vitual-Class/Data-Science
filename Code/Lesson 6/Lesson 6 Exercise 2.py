@@ -11,7 +11,7 @@ page = requests.get(base_url) # grab the page
 
 soup = BeautifulSoup(page.content, "html.parser") # create your beautiful soup object
 
-#loop all links
+#loop all links <a> </a>
 for links in soup.find_all("a"):   
      print ("Found the URL:", links['href'])
 
