@@ -12,16 +12,15 @@ from seaborn import scatterplot
 
 #read our CSV data file
 df = pd.read_csv(os.path.dirname(os.path.realpath(__file__))+"\\Datasets\\Penguins.csv")
-print(df.head())
 
 # Dropping missing records
 df = df.dropna()
-print(len(df))
+# print(len(df))
 
 
-# Plotting our penguin species features
-pairplot(df, hue='species')
-plt.show()
+# # Plotting our penguin species features
+# pairplot(df, hue='species')
+# plt.show()
 
 
 # Splitting our data
@@ -37,25 +36,41 @@ clf.fit(X_train, y_train)
 
 # Making predictions with our data
 predictions = clf.predict(X_test)
-print(predictions[:5])
 
-# Returns:['Gentoo' 'Chinstrap' 'Gentoo' 'Adelie' 'Gentoo']
+print(predictions[:5]) # display the first five elements (rows) of the predictions array
 
+# # Returns:['Gentoo' 'Chinstrap' 'Gentoo' 'Adelie' 'Gentoo']
 
-# Visualizing the linear function for our SVM classifier
+# # Visualizing the linear function for our SVM classifier
 
-w = clf.coef_[0]
-b = clf.intercept_[0]
-x_visual = np.linspace(32,57)
-y_visual = -(w[0] / w[1]) * x_visual - b / w[1]
+w = clf.coef_[0] #represents the weights assigned to the features in the model
+b = clf.intercept_[0] # the "intercept_" attribute represents the constant term in the linear equation
+x_visual = np.linspace(32,57) # generates a sequence of evenly spaced numbers between 32 and 57 using the numpy "linspace" function
+y_visual = -(w[0] / w[1]) * x_visual - b / w[1] # this line calculates the corresponding y-axis values for visualization based on the linear classifier's coefficients and intercept.
 
 scatterplot(data = X_train, x='culmen_length_mm', y='culmen_depth_mm', hue=y_train)
 plt.plot(x_visual, y_visual)
 plt.show()
 
 
-# Testing the accuracy of our model
+# # Testing the accuracy of our model
 print(accuracy_score(y_test, predictions))
+
+                                                                                                                                                                   
+# new data point prediction
+
+new_penguin_dimensions_one = pd.DataFrame([[49.9 ,16.1]], columns = ['culmen_length_mm', 'culmen_depth_mm']) #Gentoo
+new_penguin_dimensions_two = pd.DataFrame([[48.5,17.5]], columns = ['culmen_length_mm', 'culmen_depth_mm']) #Chinstrap
+
+
+new_penguin_dimensions_random = pd.DataFrame([[1.5,7.5]], columns = ['culmen_length_mm', 'culmen_depth_mm'])
+
+predictede = clf.predict(new_penguin_dimensions_random) 
+
+print(f'Predicted the species as : {predictede[0]}')
+
+
+
 
 
 

@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 page = requests.get("https://www.dailytrends.co.ke") # grab the page
 
 soup = BeautifulSoup(page.content, "html.parser") # create your beautiful soup object
-crimescontainer = soup.select('[id=pencifeatured_cat_99142]') # fetch the conntainer having the crime news
+crimescontainer = soup.select('[id=pencifeatured_cat_60148]') # fetch the conntainer having the crime news
 
 magicdetail_boxes = crimescontainer[0].find_all('div', {"class": "magcat-detail"}) #find the inner boxes ; div elements
 

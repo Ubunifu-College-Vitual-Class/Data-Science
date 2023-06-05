@@ -4,8 +4,7 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
-from urllib.request import urlopen # use request for the python urllib library
-from bs4 import BeautifulSoup
+
 base_url = "https://nation.africa/kenya"
 page = requests.get(base_url) # grab the page
 

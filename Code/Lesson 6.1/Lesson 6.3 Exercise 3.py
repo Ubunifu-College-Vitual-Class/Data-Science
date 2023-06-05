@@ -6,8 +6,8 @@ import requests
 from bs4 import BeautifulSoup
 from mysql.connector import Error
 
-from urllib.request import urlopen # use request for the python urllib library
-from bs4 import BeautifulSoup
+# from urllib.request import urlopen # use request for the python urllib library
+# from bs4 import BeautifulSoup
 
 #prepare a connection to mysql
 def inital_connection(host_name, user_name, user_password):
