@@ -84,8 +84,3 @@ for episode in range(EPISODES + 1): #go through the episodes
         total_reward = 0
 video.close() 
 env.close()
-
-
-
-# Ref :
-#     #https://medium.com/swlh/using-q-learning-for-openais-cartpole-v1-4a216ef237df
