@@ -1,4 +1,3 @@
-# https://github.com/sourcecode369/deep-reinforcement-learning/blob/master/DQN/CartPole-v1/CartPole-v1%20with%20Fixed%20Q%20Targets%20in%20TensorFlow.ipynb
 from IPython.core.interactiveshell import InteractiveShell
 InteractiveShell.ast_node_interactivity = "all"
 
